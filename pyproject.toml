@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "supersonic-tts"
+version = "0.1.0"
+description = "Stdin-friendly CLI + Python API wrapper for Supertonic — lightning-fast, on-device, multilingual TTS"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [
+  { name = "Jaspreet Singh", email = "jaspreetsinghintp@gmail.com" },
+]
+keywords = ["tts", "text-to-speech", "supertonic", "on-device", "onnx"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+  "supertonic>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/jxsprt/supersonic-tts"
+Repository = "https://github.com/jxsprt/supersonic-tts"
+
+[project.scripts]
+supersonic-tts = "supersonic_tts.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/supersonic_tts"]
